@@ -1,0 +1,242 @@
+{
+  "swagger": "1.0",
+  "info": {
+    "description": "这是Plugin Build Platform的restful api",
+    "version": "1.0.0",
+    "title": "插件构建系统",
+    "termsOfService": "http://swagger.io/terms/",
+    "contact": {
+      "email": "xubo@viomi.com"
+    }
+  },
+  "host": "localhost:8080/",
+  "basePath": "swagger/",
+  "tags": [
+    {
+      "name": "品类",
+      "description": "品类相关操作"
+    },
+    {
+      "name": "产品",
+      "description": "产品相关操作"
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/api/product/open-api/v1/updateProductTypeConfig": {
+      "post": {
+        "tags": [
+          "品类"
+        ],
+        "summary": "更新品类配置",
+        "description": "更新品类配置",
+        "operationId": "updateProductTypeConfig",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "传入品类ID和相应的配置信息",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer",
+                  "format": "int32"
+                },
+                "config": {
+                  "type": "object"
+                }
+              },
+              "xml": {
+                "name": "User"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "100": {
+            "description": {
+              "code": 100,
+              "desc": "成功"
+              }
+          }
+        },
+        "security": [
+          {
+            "Authorizations": [
+              "write:pets",
+              "read:pets"
+            ]
+          }
+        ]
+      }
+    },
+    "/api/product/open-api/v1/queryProductType": {
+      "get": {
+        "tags": [
+          "品类"
+        ],
+        "summary": "获取全部品类列表",
+        "description": "获取全部品类列表",
+        "operationId": "queryProductType",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+        ],
+        "responses": {
+          "100": {
+            "description": {
+              "result": [
+              ],
+              "code": 100,
+              "desc": "成功"
+            },
+            "schema": {
+              "type": "object",
+              "items": {
+                "$ref": "#/definitions/config"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "petstore_auth": [
+              "write:pets",
+              "read:pets"
+            ]
+          }
+        ]
+      }
+    },
+    "/api/product/open-api/v1/updateProductConfig": {
+      "post": {
+        "tags": [
+          "产品"
+        ],
+        "summary": "更新产品配置",
+        "description": "更新产品配置",
+        "operationId": "updateProductConfig",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": {
+          "id": 0,
+          "config": {
+          }
+        },
+        "responses": {
+          "100": {
+            "description": {
+              "code": 100,
+              "desc": "成功"
+            },
+            "schema": {
+              "type": "object",
+              "items": {
+                "$ref": "#/definitions/config"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "petstore_auth": [
+              "write:pets",
+              "read:pets"
+            ]
+          }
+        ]
+      }
+    },
+    "/api/product/open-api/v1/getProductConfig": {
+      "get": {
+        "tags": [
+          "产品"
+        ],
+        "summary": "获取产品配置",
+        "description": "获取产品配置",
+        "operationId": "getProductConfig",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": {
+          "id": 1
+        },
+        "responses": {
+          "100": {
+            "description": {
+              "result": {
+                "config": {
+                }
+              },
+              "code": 100,
+              "desc": "成功"
+            },
+            "schema": {
+              "type": "object",
+              "items": {
+                "$ref": "#/definitions/config"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "petstore_auth": [
+              "write:pets",
+              "read:pets"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "securityDefinitions": {
+    "Authorizations": {
+      "type": "oauth2",
+      "authorizationUrl": "http://petstore.swagger.io/oauth/dialog",
+      "flow": "implicit",
+      "scopes": {
+        "write:pets": "modify pets in your account",
+        "read:pets": "read your pets"
+      }
+    },
+    "api_key": {
+      "type": "apiKey",
+      "name": "authorization_v1",
+      "in": "header",
+      "value":"Skf7csK6yFme0t6u"
+    }
+  },
+  "definitions": {
+    "config": {
+      "type": "object",
+      "properties": {
+      }
+    }
+  },
+  "externalDocs": {
+    "description": "Find out more about Swagger",
+    "url": "http://swagger.io"
+  }
+}

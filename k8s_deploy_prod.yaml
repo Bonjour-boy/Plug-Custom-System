@@ -1,0 +1,76 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: plug-custom-system-deployment
+  namespace: yunmi-front
+spec:
+  selector:
+    matchLabels:
+      app: plug-custom-system
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: plug-custom-system
+    spec:
+      containers:
+      - name: plug-custom-system
+        image: hub.kce.ksyun.com/yunmi-front/viomi/plug-custom-system:prod-15   ###镜像名称=jenkinsjob中的PROJECT_NAME+环境参数ENV值-自动生成的版本号，务必保持一致，否则构建部署时找不到镜像错误
+        ports:
+        - containerPort: 8080  ##容器端口
+        command: []
+        args: []
+        env:
+        - name: "productMode"  ###运行时参数，环境变量，每个项目需自己配置
+          value: "2"
+        resources:
+          requests:    ####运行最小CPU、内存配置，实际调整参考现在待迁移应用列表中的内存使用情况
+            memory: "300Mi"
+          limits:    ####最大配置
+            memory: "1000Mi"
+        volumeMounts:
+        - mountPath: /etc/localtime
+          name: host-time
+      volumes:
+      - hostPath:
+          path: /etc/localtime
+          type: ""
+        name: host-time
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: plug-custom-system-service
+  namespace: yunmi-front
+  labels:
+    name: plug-custom-system-service
+spec:
+  type: ClusterIP
+  ports:
+    - port: 8080
+      targetPort: 8080
+      protocol: TCP
+  selector:
+    app: plug-custom-system
+
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    service.beta.kubernetes.io/ksc-loadbalancer-cert-id: c55aef53-2c86-4e03-a590-dae60c9b2a20
+  name: plug-custom-system-ingress
+  namespace: yunmi-front
+  annotations:
+    kubernetes.io/ingress.class: traefik
+spec:
+  rules:    ###host域名映射可以配置多个域名多个映射路径，自行配置，自行添加V1引擎中用到的域名和路径配置
+    - host: plugcenter.viomi.com.cn ###域名
+      http:
+        paths:
+          - path: /   ##映射路径
+            backend:
+              serviceName: plug-custom-system-service
+              servicePort: 8080

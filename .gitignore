@@ -1,0 +1,7 @@
+node_modules/
+Dist/
+/Src/Server/PluginProjects/Root/*
+/Src/Server/PluginProjects/Zip/*
+/Src/Server/PluginProjects/Bundle/*
+yarn.lock
+Logs/

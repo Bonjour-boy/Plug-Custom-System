@@ -1,0 +1,7 @@
+{
+    "userName": "liguobin",
+    "password": "viomiliguobin",
+    "email":"liguobin@viomi.com",
+    "submoduleName": "Viomi-plugin-sdk",
+    "submoduleGit": "https://gitlab.viomi.com.cn/app/devices-rn-2.0/base/Viomi-plugin-sdk.git"
+}

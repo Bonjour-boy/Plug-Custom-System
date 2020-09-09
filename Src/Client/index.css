@@ -1,0 +1,19 @@
+a{
+    color:#333
+}
+
+.active{
+    color: #0cf;
+}
+
+.head{
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+    clear: both;
+}
+
+.head a{
+    display: block;
+    width: 8em;
+}

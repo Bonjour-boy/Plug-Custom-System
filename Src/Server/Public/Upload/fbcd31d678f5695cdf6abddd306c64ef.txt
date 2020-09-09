@@ -1,0 +1,103 @@
+{
+    "models": [
+        	"yunmi.waterpurifier.v1", 
+	"yunmi.waterpurifier.v2", 
+	"yunmi.waterpuri.lx2",
+	"yunmi.waterpuri.lx4", 
+	"yunmi.waterpurifier.v3", 
+	"yunmi.waterpuri.lx3", 
+	"yunmi.waterpuri.lx6", 
+	"yunmi.waterpuri.lx8",
+	"yunmi.waterpuri.x5", 
+	"yunmi.waterpuri.c1", 
+	"yunmi.waterpuri.c2", 
+	"yunmi.waterpuri.c4", 
+	"yunmi.waterpuri.v1", 
+	"yunmi.waterpuri.v2", 
+	"yunmi.waterpuri.v3", 
+	"yunmi.waterpuri.v4",
+
+	"yunmi.waterpuri.v5",
+	"yunmi.waterpuri.v6",
+	"yunmi.waterpuri.c5" 
+    ],
+    "props": [{
+            "prop_key": "prop.tds_out",
+            "format": "%.0f",
+            "prop_unit": "ppm",
+            "ratio": 1,
+            "prop_name": {
+                "en": "TDS",
+                "zh_CN": "TDS"
+            },
+            "prop_extra": [{
+                "param_range": {
+                    "min": 0,
+                    "max": 10000
+                },
+                "text_color": "#FF00A3B4"
+            }]
+        },
+        {
+            "prop_key": "prop.f1_totaltime,prop.f1_usedtime",
+            "split": true,
+            "format": "%.0f",
+            "prop_unit": "%",
+            "ratio": 1,
+            "prop_name": {
+                "en": "滤芯1",
+                "zh_CN": "滤芯1"
+            }
+        },
+        {
+            "prop_key": "prop.f2_totaltime,prop.f2_usedtime",
+            "split": true,
+            "format": "%.0f",
+            "prop_unit": "%",
+            "ratio": 1,
+            "prop_name": {
+                "en": "滤芯2",
+                "zh_CN": "滤芯2"
+            }
+        },
+        {
+            "prop_key": "prop.f3_totaltime,prop.f3_usedtime",
+            "split": true,
+            "format": "%.0f",
+            "prop_unit": "%",
+            "ratio": 1,
+            "prop_name": {
+                "en": "滤芯3",
+                "zh_CN": "滤芯3"
+            }
+        },
+        {
+            "prop_key": "prop.f4_totaltime,prop.f4_usedtime",
+            "split": true,
+            "format": "%.0f",
+            "prop_unit": "%",
+            "ratio": 1,
+            "prop_name": {
+                "en": "滤芯4",
+                "zh_CN": "滤芯4"
+            }
+        }
+    ],
+    "cards": {
+        "layout_type": 3,
+        "card_items": [{
+                "cardType": 7,
+                "prop_key": "prop.tds_out"
+            },
+            {
+                "cardType": 100,
+                "prop_keys": [
+                    "prop.f1_totaltime,prop.f1_usedtime",
+                    "prop.f2_totaltime,prop.f2_usedtime",
+                    "prop.f3_totaltime,prop.f3_usedtime",
+                    "prop.f4_totaltime,prop.f4_usedtime"
+                ]
+            }
+        ]
+    }
+}

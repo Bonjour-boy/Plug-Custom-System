@@ -1,0 +1,7 @@
+{
+    "root": "../Server/PluginProjects/Root",
+    "zip": "../Server/PluginProjects/Zip",
+    "bundle": "../Server/PluginProjects/Bundle",
+    "upload":"../Server/Public/Upload/",
+    "rn54":"../Server/RN54"
+}

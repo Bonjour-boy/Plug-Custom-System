@@ -1,0 +1,6 @@
+{
+    "host": "localhost",
+    "port": 8080,
+    "entryDirectory": "./Src/Client/index.js",
+    "outputDirectory": "Dist"
+}

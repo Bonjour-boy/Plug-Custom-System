@@ -1,0 +1,5 @@
+{
+  "PRODUCT_TABLE_NAME":"product",
+  "CATEGORY_TABLE_NAME":"category",
+  "PLUGIN_PROJECTS_TABLE_NAME":"plugin_projects"
+}

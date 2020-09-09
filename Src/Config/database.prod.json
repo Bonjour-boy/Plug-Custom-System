@@ -1,0 +1,7 @@
+{
+    "host": "10.62.1.248",
+    "port": 3306,
+    "user": "plugin_user",
+    "password": "~sdWsd5892fda1SLDAE0",
+    "database": "plugdb"
+}

@@ -1,0 +1,62 @@
+{
+    "success": {
+        "code": 100,
+        "msg": "成功！"
+    },
+    "error_common": {
+        "code": 900,
+        "msg": "服务器异常"
+    },
+    "error_req_format": {
+        "code": -200,
+        "msg": "参数格式错误！"
+    },
+    "error_res_none": {
+        "code": -250,
+        "msg": "数据不存在"
+    },
+    "error_db_query": {
+        "code": -300,
+        "msg": "查询错误！"
+    },
+    "error_file_write": {
+        "code": -801,
+        "msg": "文件写入出错！"
+    },
+    "error_project_none": {
+        "code": -802,
+        "msg": "插件项目不存在，请先构建项目！"
+    },
+    "error_file_import": {
+        "code": 818,
+        "msg": "文件导入出错！"
+    },
+    "error_sms_send": {
+        "code": 819,
+        "msg": "短信发送失败"
+    },
+    "error_call": {
+        "code": 820,
+        "msg": "接口调用失败"
+    },
+    "error_token_empty": {
+        "code": 918,
+        "msg": "token为空"
+    },
+    "error_token_expired": {
+        "code": 919,
+        "msg": "token过期"
+    },
+    "error_token_invalid": {
+        "code": -104,
+        "msg": "token验证失败"
+    },
+    "error_json_parse": {
+        "code": 930,
+        "msg": "json解析异常"
+    },
+    "error_git_congestion": {
+        "code": 951,
+        "msg": "当前项目正在Git中，请稍后再试"
+    }
+}

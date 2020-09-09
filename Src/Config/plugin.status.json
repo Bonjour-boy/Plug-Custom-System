@@ -1,0 +1,5 @@
+{
+    "idle": 0,
+    "waiting": 1,
+    "packaging": 2
+}
